@@ -1,4 +1,4 @@
-report
+### report
 
 installation was done using helm:
 
@@ -8,14 +8,17 @@ the chat was rocketchat:
 
 $ helm install --name qwer -f rocket.yaml stable/rocketchat
 
-rocket.yaml:
+`rocket.yaml`:
+```yaml
 externalMongodbUrl: mongodb://qweqweqwe-mongodb-replicaset-0.qweqweqwe-mongodb-replicaset,qweqweqwe-mongodb-replicaset-1.qweqweqwe-mongodb-replicaset,qweqweqwe-mongodb-replicaset-2.qweqweqwe-mongodb-replicaset/rocketchat?replicaSet=rs0
 externalMongodbOplogUrl: mongodb://qweqweqwe-mongodb-replicaset-0.qweqweqwe-mongodb-replicaset,qweqweqwe-mongodb-replicaset-1.qweqweqwe-mongodb-replicaset,qweqweqwe-mongodb-replicaset-2.qweqweqwe-mongodb-replicaset/local?replicaSet=rs0
 
 service.type: NodePort
 mongo.enabled: false
+```
 
-rs.status():
+`rs.status()`:
+```json
 {
         "set" : "rs0",
         "date" : ISODate("2019-11-01T17:43:54.249Z"),
@@ -131,8 +134,10 @@ rs.status():
                 }
         }
 }
+```
 
-rs.config():
+`rs.config()`:
+```json
 {
         "_id" : "rs0",
         "version" : 3,
@@ -195,16 +200,21 @@ rs.config():
                 "replicaSetId" : ObjectId("5dbc6b07dedb6432d7d6d791")
         }
 }
-Screenshot of spam:
+```
 
-Brutally murdering master
+### Screenshot of spam:
 
+### Brutally murdering master
+
+```
 $ kubectl delete qweqweqwe-mongodb-replicaset-0
+```
 
-Screenshot of spam again:
+### Screenshot of spam again:
 
 
-rs.status():
+`rs.status()`:
+```json
 {
         "set" : "rs0",
         "date" : ISODate("2019-11-01T17:44:05.676Z"),
@@ -318,8 +328,11 @@ rs.status():
                 }
         }
 }
+```
 
-rs.config():
+`rs.config()`:
+
+```json
 {
         "_id" : "rs0",
         "version" : 3,
@@ -382,3 +395,4 @@ rs.config():
                 "replicaSetId" : ObjectId("5dbc6b07dedb6432d7d6d791")
         }
 }
+```
