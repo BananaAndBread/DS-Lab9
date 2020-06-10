@@ -1,3 +1,37 @@
+### task
+Assignment
+
+1. Create 3 VPS, install Mongodb on each of them;
+
+2. Configure internal network between VPS, create “domain names” for each VPS in created network via
+/etc/hosts file;
+
+3. Configure each mongodb to listen on corresponding interface /etc/mongod.conf ;
+
+4. Setup replication set following the guide;
+
+5. Create simple chat web-application which uses this replica set. It’s not required to be ‘real time’. Updates after
+F5 – okay; (don’t forget to connect to replica set, not just single instance!)
+
+6. Fill database with spam a little bit;
+
+7. Put output of rs.status() and rs.config() to README.md file;
+
+8. Put a screenshot of your application with most recent messages to README.md;
+
+9. Shutdown VPS with primary mongodb instance!
+
+10. Repeat step 6, 7 and 8;
+
+11. Shutdown all VPS instances.
+
+Your submission is only link to GitHub repo with all code and report (README.md file).
+
+Bonus:
+
+Use docker and kubernetes for mongodb and your application to get additional 1 point! In this case application should
+be published to docker hub
+
 ### report
 
 installation was done using helm:
